@@ -2,9 +2,19 @@
 const taskInput = document.getElementById("task-input");
 const dateInput = document.getElementById("date-input");
 const addButton = document.getElementById("add-button");
+const alertMassage = document.getElementById("alert-massage");
+
 
 const todos = []
-const addHandler = () =>{
+
+const showAlert =(massage, type) => {
+    alertMassage.innerHTML = "";
+    const alert = document.createElement("p")
+    alert.innerText = massage;
+    alert.classList.add("")
+}
+
+const addHandler = () => {
     const task = taskInput.value;
     const date = dateInput.value;
     const todo = {
@@ -18,7 +28,7 @@ const addHandler = () =>{
         dateInput.value = "";
         console.log(todos);
     } else {
-        alert("Warning!");
+        showAlert ("please enter a todo", "error")
     }
 }
 
